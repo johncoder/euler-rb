@@ -36,8 +36,8 @@ def problem_1(limit)
   end
   multiples.sum
 end
-problem_1 10
-problem_1 1000
+p problem_1 10
+p problem_1 1000
 #+END_SRC
 * Problem 2
 [[https://projecteuler.net/problem=2][link]]
@@ -62,7 +62,7 @@ def problem_2
   end
   total
 end
-problem_2
+p problem_2
 #+END_SRC
 * Problem 3
 [[https://projecteuler.net/problem=3][link]]
@@ -107,7 +107,7 @@ def problem_3(value)
   factors
 end
 
-problem_3 600851475143
+p problem_3 600851475143
 #+END_SRC
 
 ** Prime Table
@@ -140,6 +140,8 @@ def problem_4
 
   return left, right # , left * right
 end
+
+p problem_4
 #+END_SRC
 * Problem 5
 [[https://projecteuler.net/problem=5][link]]
@@ -183,3 +185,22 @@ p problem_5 1, 20
 
 #+RESULTS:
 : 232792560
+* Problem 6
+[[https://projecteuler.net/problem=6][link]]
+
+#+BEGIN_SRC ruby :tangle src/problem_6.rb
+def problem_6
+  first_n = 101
+  sum = 0
+  sum_sq = 0
+  first_n.times.each do |n|
+    sum += n
+    sum_sq += n**2
+  end
+  (sum**2) - sum_sq
+end
+p problem_6
+#+END_SRC
+
+#+RESULTS:
+: 25164150

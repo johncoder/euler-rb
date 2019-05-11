@@ -34,4 +34,4 @@ def problem_3(value)
   factors
 end
 
-problem_3 600851475143
+p problem_3 600851475143

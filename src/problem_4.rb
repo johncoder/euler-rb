@@ -18,3 +18,5 @@ def problem_4
 
   return left, right # , left * right
 end
+
+p problem_4

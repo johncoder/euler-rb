@@ -16,4 +16,4 @@ def problem_2
   end
   total
 end
-problem_2
+p problem_2

@@ -6,5 +6,5 @@ def problem_1(limit)
   end
   multiples.sum
 end
-problem_1 10
-problem_1 1000
+p problem_1 10
+p problem_1 1000
