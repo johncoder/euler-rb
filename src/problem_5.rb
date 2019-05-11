@@ -29,3 +29,4 @@ def problem_5(low, high)
 end
 
 p problem_5 1, 10
+p problem_5 1, 20
