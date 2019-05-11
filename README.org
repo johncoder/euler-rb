@@ -182,9 +182,6 @@ end
 p problem_5 1, 10
 p problem_5 1, 20
 #+END_SRC
-
-#+RESULTS:
-: 232792560
 * Problem 6
 [[https://projecteuler.net/problem=6][link]]
 
@@ -201,6 +198,3 @@ def problem_6
 end
 p problem_6
 #+END_SRC
-
-#+RESULTS:
-: 25164150
