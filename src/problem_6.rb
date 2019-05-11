@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 def problem_6
   first_n = 101
   sum = 0
