@@ -20,7 +20,7 @@ def problem_5(low, high)
     end
 
     if not all_common_factors
-      result += high
+      result += 1
     else
       break
     end

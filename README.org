@@ -144,10 +144,7 @@ end
 * Problem 5
 [[https://projecteuler.net/problem=5][link]]
 
-For this one I had an idea that the list of all factors in the range from 1..N has some built in redundancy (i.e. if 10 is a factor, then /its/ factors, 2 and 5 and 1, are implicit). Therefore, two simple optimizations are possible:
-
-+ Eliminate the implied factors in the list
-+ Count by your largest possible factor (since it's required!)
+For this one I had an idea that the list of all factors in the range from 1..N has some built in redundancy (i.e. if 10 is a factor, then /its/ factors, 2 and 5 and 1, are implicit). Therefore, a simple optimization is to eliminate the implied factors in the list.
 
 #+BEGIN_SRC ruby :tangle src/problem_5.rb
 #!/usr/bin/env ruby
@@ -172,7 +169,7 @@ def problem_5(low, high)
     end
 
     if not all_common_factors
-      result += high
+      result += 1
     else
       break
     end
@@ -182,5 +179,3 @@ end
 
 p problem_5 1, 10
 #+END_SRC
-
-#+RESULTS:
