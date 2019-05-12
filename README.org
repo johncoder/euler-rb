@@ -314,7 +314,7 @@ def problem_9(final_value)
     end
   end
 
-  c = 1000 - a - b
+  c = final_value - a - b
 
   p "a=#{a} b=#{b} c=#{c}"
 
