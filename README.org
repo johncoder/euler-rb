@@ -290,3 +290,40 @@ p problem_8(thousand_digits, 4)
 p problem_8(thousand_digits, 5)
 p problem_8(thousand_digits, 13)
 #+END_SRC
+* Problem 9
+[[https://projecteuler.net/problem=9][link]]
+
+First, I took the equation ~a + b + c = 1000~ and solved for =c= to get ~c = 1000 - a - b~. Then, I took the Pythagorean Theorem and solved for =c= to get ~c = Math.sqrt(a**2 + b**2)~. Both equations are solving for =c=, which means they are equal: ~1000 - a - b = Math.sqrt(a**2 + b**2)~, which can be simplified to ~1000 = Math.sqrt(a**2 + b**2) + a + b~.
+
+My algorithm then uses trial and error with valid values for =a= and =b= such that =a < b= and terminating when ~b = c~.
+
+#+BEGIN_SRC ruby :tangle src/problem_9.rb :results output
+#!/usr/bin/env ruby
+def problem_9(final_value)
+  limit = final_value
+  a, b = 1, 2
+
+  until final_value == Math.sqrt(a**2 + b**2) + a + b
+    if b == limit
+      a += 1
+      b = a + 1
+    elsif b < limit
+      b += 1
+    else
+      raise "No such luck: a=#{a} b=#{b}"
+    end
+  end
+
+  c = 1000 - a - b
+
+  p "a=#{a} b=#{b} c=#{c}"
+
+  if a**2 + b**2 != c**2
+    raise "doesn't work"
+  end
+
+  return a * b * c
+end
+
+p problem_9 1000
+#+END_SRC
