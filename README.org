@@ -295,7 +295,12 @@ p problem_8(thousand_digits, 13)
 
 First, I took the equation ~a + b + c = 1000~ and solved for =c= to get ~c = 1000 - a - b~. Then, I took the Pythagorean Theorem and solved for =c= to get ~c = Math.sqrt(a**2 + b**2)~. Both equations are solving for =c=, which means they are equal: ~1000 - a - b = Math.sqrt(a**2 + b**2)~, which can be simplified to ~1000 = Math.sqrt(a**2 + b**2) + a + b~.
 
-TODO(john): Describe the trial & error and trial space
+My approach uses trial and error, using valid values for =a= and =b= such that =a < b=, and a reasonable value for =c= is possible. All reasonable values for =b= where =b > a= are tested before a larger value =a= is tested.
+
++ Given that =b < c=, a reasonable value for =c= can be tested when =2 * b + a < 1000=.
++ Given that =b < c=, an unreasonable value for =c= exists when =2 * b + a > 1000=.
+
+For practical reasons, a limit is introduced to avoid unbounded execution.
 
 #+BEGIN_SRC ruby :tangle src/problem_9.rb :results output
 #!/usr/bin/env ruby
@@ -307,7 +312,7 @@ def problem_9(final_value)
   until final_value == Math.sqrt(a**2 + b**2) + a + b
     if 2 * b + a < final_value
       b += 1
-    elsif a + b >= final_value - a - b
+    elsif 2 * b + a >= final_value
       a += 1
       b = a + 1
     end
@@ -322,7 +327,7 @@ def problem_9(final_value)
 
   p "a=#{a} b=#{b} c=#{c}, attempts=#{attempts}"
 
-  # NOTE(john): A little self doubt
+  # NOTE(john): A little self doubt?
   if a**2 + b**2 != c**2
     raise "doesn't work"
   end

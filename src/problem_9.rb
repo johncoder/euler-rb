@@ -7,7 +7,7 @@ def problem_9(final_value)
   until final_value == Math.sqrt(a**2 + b**2) + a + b
     if 2 * b + a < final_value
       b += 1
-    elsif a + b >= final_value - a - b
+    elsif 2 * b + a >= final_value
       a += 1
       b = a + 1
     end
@@ -22,7 +22,7 @@ def problem_9(final_value)
 
   p "a=#{a} b=#{b} c=#{c}, attempts=#{attempts}"
 
-  # NOTE(john): A little self doubt
+  # NOTE(john): A little self doubt?
   if a**2 + b**2 != c**2
     raise "doesn't work"
   end
